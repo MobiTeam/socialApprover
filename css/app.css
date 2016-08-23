@@ -1,0 +1,36 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #edeef0;
+}
+
+.adapt-img {
+	max-width: 100%;
+	height: auto;
+	margin: 10px auto;
+    display: block;
+}
+
+.main-navbar {
+	background: #507299;
+    height: 42px;
+    border-bottom: 1px solid #466991;
+    color: white!important;
+}
+
+.navbar-brand {
+	color: white!important;
+}
+
+.main-navbar a {
+	color: white!important;
+}
+
+.navbar-default .active>a,
+.navbar-default a:focus, 
+.navbar-default a:hover {
+	background: #486991!important;
+}
