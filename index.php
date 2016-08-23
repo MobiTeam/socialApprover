@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Главная страница</title>
+	<title>Social Approver - главная страница</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/remodal.css">
 	<link rel="stylesheet" type="text/css" href="css/remodal-default-theme.css">
