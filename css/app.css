@@ -21,6 +21,11 @@ body {
     color: white!important;
 }
 
+.main-navbar-wrap {
+	background: #507299;
+}
+
+
 .navbar-brand {
 	color: white!important;
 }
@@ -33,4 +38,23 @@ body {
 .navbar-default a:focus, 
 .navbar-default a:hover {
 	background: #486991!important;
+}
+
+.dashboard-item {
+	padding: 4px!important;
+	opacity: 0.6;
+}
+
+.dashboard-item:hover {
+	opacity: 1;
+	cursor: pointer;
+}
+
+.dashboard-item:active {
+	background: #ffffd6;
+}
+
+.item-content {
+	background: white;
+	padding: 10px;
 }

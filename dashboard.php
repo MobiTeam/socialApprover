@@ -32,28 +32,32 @@
 	<div class="container">
 		
 		
-		<h2>Сервис кросспостинга в социальные сети</h2>
+		<h4>Личный кабинет пользователя <a href="">Петроченко Владислав</a></h4>
 		<hr>
-		<div class="content-area">
-			
+		<div class="content-area">			
 			<div class="row">
-				<div class="col-xs-12 col-md-6 col-lg-4">
-					
-					<img class="adapt-img" src="img/megaphone.jpg" alt="" title="">
-
-					<p>Удобная платформа для обсуждения и объявления.</p>
+				<div class="dashboard-item col-xs-12 col-md-6 col-lg-4">
+					<div class="item-content">
+						324
+					</div>
 				</div>
-				<div class="col-xs-12 col-md-6 col-lg-4">
-	
-					<img class="adapt-img" src="img/communicate.jpg" alt="" title="">
 
-					<p>Коммуницируйте с людьми из различных социальных сетей.</p>
+				<div class="dashboard-item col-xs-12 col-md-6 col-lg-4">
+					<div class="item-content">
+						324
+					</div>
 				</div>
-				<div class="col-xs-12 col-md-6 col-lg-4">
-				
-					<img class="adapt-img" src="img/statistic.jpg" alt="" title="">	
 
-					<p>Модуль статистики, который поможет вам определиться с выбором.</p>
+				<div class="dashboard-item col-xs-12 col-md-6 col-lg-4">
+					<div class="item-content">
+						324
+					</div>
+				</div>
+
+				<div class="dashboard-item col-xs-12 col-md-6 col-lg-4">
+					<div class="item-content">
+						324
+					</div>
 				</div>
 			</div>
 		</div>
