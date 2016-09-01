@@ -58,3 +58,46 @@ body {
 	background: white;
 	padding: 10px;
 }
+
+.item-icon {
+	font-size: 80px;
+	vertical-align: middle;
+}
+
+.item-icon--blue {
+	color: #0D47A1;
+}
+
+.item-icon--green {
+	color: #004D40;
+}
+
+.item-icon--orange {
+	color: #E65100;
+}
+
+.item-icon--brown {
+	color: #3E2723;
+}
+
+.item-icon--red {
+	color: #D50000;
+}
+
+.item-icon--yellow {
+	color: #FFD600;
+}
+
+.navbar-toggle {
+	border: none!important;
+	padding: 10px!important;
+	margin: 0px!important;
+}
+
+.navbar-toggle:hover, .navbar-toggle:focus {
+	background: #486991!important;
+}
+
+.footer {
+	padding: 10px;
+}

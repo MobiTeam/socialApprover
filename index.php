@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Social Approver - главная страница</title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/remodal.css">
 	<link rel="stylesheet" type="text/css" href="css/remodal-default-theme.css">
