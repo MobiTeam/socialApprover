@@ -1,0 +1,8 @@
+{
+	"index": {
+			"fullModuleName"   	 : "app.pages.index",
+			"template"	 		 : "tmpl/app.pages.index.tmpl",
+			"userGroups" 		 :	[0, 1, 2]
+		}	
+}
+
