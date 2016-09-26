@@ -76,6 +76,11 @@
 		<script src="js/custom/app.modules.js"></script>
 		<script src="js/custom/app.modules.vk.js"></script>
 
+		<!-- pages -->
+		<script src="js/custom/app.pages.js"></script>
+		<script src="js/custom/app.pages.index.js"></script>
+		<script src="js/custom/app.pages.dashboard.js"></script>
+
 		<script>
 			app.start();
 		</script>

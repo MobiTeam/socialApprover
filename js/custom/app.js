@@ -14,26 +14,30 @@ var app = (function($) {
 	// public methods
 
 	function start() {
-		
 		_ini();
 		_bindActions();
-
-
-
-		// $.uriAnchor.makeAnchorMap().page || 'index'
-		
 	}
 
 	function goToPage(newAddress, query, replaceQueryFlag) {
 		// $.uriAnchor.makeAnchor();
+		// $.uriAnchor.makeAnchorMap().page || 'index'
 	}
 
 	// private methods
 
 	function _ini() {
-		for (var module in app.modules) {
-			app.modules[module].init && app.modules[module].init();	
-		} 
+		$.get('settings/routes.json')
+			.done(function(response) {
+
+				console.log(response);
+
+				for (var module in app.modules) {
+					app.modules[module].init && app.modules[module].init();	
+				} 
+			})
+			.fail(function() {
+				throw new Error('Routes not load');
+			})
 	}
 
 	function _bindActions() {
@@ -51,17 +55,19 @@ var app = (function($) {
 			loadedModulesCnt++;
 
 			if (loadedModulesCnt == Object.keys(app.modules).length) {
-				alert('All modules loaded');
+				// go to page rendering
+				$(window).trigger('hashchange');
+				console.log('All modules loaded');
 			}
 		}
 
 		function _onHashChange(event) {
 
-			// if correct
-			// switch page
-			// else 
-			// return false
+			var page = $.uriAnchor.makeAnchorMap().page || 'index';
 
+			if (true) {
+				app.pages[page].open();
+			}
 		}	
 
 		function _onError(msg, url, lineNo, columnNo, error) {
@@ -86,12 +92,6 @@ var app = (function($) {
 			// app reload previous state
 			return true;
 		}
-
-	}
-
-	// util functions 
-
-	function _changePage() {
 
 	}
 

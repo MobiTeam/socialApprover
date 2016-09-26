@@ -3,6 +3,11 @@
 			"fullModuleName"   	 : "app.pages.index",
 			"template"	 		 : "tmpl/app.pages.index.tmpl",
 			"userGroups" 		 :	[0, 1, 2]
-		}	
+		},
+	"dashboard": {
+		"fullModuleName"   	 : "app.pages.dashboard",
+		"template"	 		 : "tmpl/app.pages.dashboard.tmpl",
+		"userGroups" 		 :	[0, 1, 2]
+	}
 }
 

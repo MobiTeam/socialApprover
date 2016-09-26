@@ -15,7 +15,7 @@ var Page = function(parameters) {
 	}
 
 	this.open = function() {
-
+		alert('Страница открыта');
 	}
 
 };
