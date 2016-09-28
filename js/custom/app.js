@@ -2,7 +2,13 @@ var app = (function($) {
 	
 	'use strict';
 
+	// app settings
+
 	var loadedModulesCnt = 0;
+	var currentAnchor = {};
+	var actionList = {
+		'page' : _changePage
+	}
 
 	// public interface
 	
@@ -14,23 +20,28 @@ var app = (function($) {
 	// public methods
 
 	function start() {
+
+		// set default anchor;
+		_bindHandlers();
 		_ini();
-		_bindActions();
 	}
 
 	function goToPage(newAddress, query, replaceQueryFlag) {
-		// $.uriAnchor.makeAnchor();
-		// $.uriAnchor.makeAnchorMap().page || 'index'
+
+		var newAnchor = $.extend(currentAnchor, {
+													page  : newAddress,
+													query : query 
+												});
+
+		// $(window).trigger('hashchange');
+
 	}
 
 	// private methods
 
 	function _ini() {
-		$.get('settings/routes.json')
+		$.get('settings/acl.json')
 			.done(function(response) {
-
-				console.log(response);
-
 				for (var module in app.modules) {
 					app.modules[module].init && app.modules[module].init();	
 				} 
@@ -40,7 +51,7 @@ var app = (function($) {
 			})
 	}
 
-	function _bindActions() {
+	function _bindHandlers() {
 	
 		$(window)
 			.on('hashchange', _onHashChange)
@@ -62,13 +73,18 @@ var app = (function($) {
 		}
 
 		function _onHashChange(event) {
+			
+			var newAnchor = $.uriAnchor.makeAnchorMap(),
+				oldAnchor = currentAnchor;
 
-			var page = $.uriAnchor.makeAnchorMap().page || 'index';
+			newAnchor.page = newAnchor.page || 'index';	
 
-			if (true) {
-				app.pages[page].open();
+			if(_updateAnchor(newAnchor)) {
+				var changes = _getChanges(newAnchor, oldAnchor);
+				_applyChanges(changes);	
 			}
-		}	
+			
+		}
 
 		function _onError(msg, url, lineNo, columnNo, error) {
 			
@@ -93,6 +109,54 @@ var app = (function($) {
 			return true;
 		}
 
+	}
+
+	// actions
+
+	function _changePage(page) {
+		app.pages[page] && app.pages[page].open();
+	}
+	
+	// util functions 
+
+	function _getChanges(newObj, oldObj) {
+
+		var changes = [];
+
+		for(var key in newObj) {
+			if(key.indexOf('_s_') != -1) continue;
+
+			if(!oldObj[key] || newObj[key] != oldObj[key]) {
+				changes.push({
+								key: key, 
+								value: newObj[key]
+							});
+			}	
+		}
+
+		return changes;
+					
+	}
+
+	function _applyChanges(changes) {
+
+		for(var change in changes) {
+			actionList[changes[change].key] && actionList[changes[change].key](changes[change].value);
+		}
+
+	}
+
+	function _updateAnchor(newAnchor) {
+
+		try {
+			$.uriAnchor.setAnchor(newAnchor);
+			currentAnchor = newAnchor;
+		} catch(e) {
+			$.uriAnchor.setAnchor(currentAnchor);
+			return false;
+		}
+
+		return true;
 	}
 
 })(jQuery);

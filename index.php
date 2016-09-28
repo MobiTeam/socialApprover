@@ -39,7 +39,9 @@
 
 		<div class="container content-box">
 			
-			
+			<a href="#!page=dashboard">dash</a>
+			<a href="#!page=index">index</a>
+			<a href="#!page=trouble">trouble</a>
 
 		</div>
 
