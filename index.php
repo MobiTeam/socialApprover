@@ -19,7 +19,7 @@
 			</div>	
 		</div>
 
-		<div class="main-navbar navbar navbar-default navbar-static-top">
+		<div class="main-navbar navbar navbar-default navbar-fixed-top">
 			<div class="container main-navbar-wrap">
 				<div class="container-fluid">
 				   	<div class="navbar-header">
@@ -32,13 +32,12 @@
 
 					<div class="navbar-ul collapse navbar-collapse">
 						<ul class="nav navbar-nav">
-		    				<li><a href="#!page=aboutus">О нас</a></li>
-		    				<li><a href="#!page=index">FAQ</a></li>
-		    				<li><a href="#!page=dashboard">Dashboard</a></li>
+		    				<li><a href="#!page=index">Перейти на главную</a></li>
+		    				<li><a href="#!page=aboutus">FAQ</a></li>
 		    			</ul>
 
 					    <ul class="nav navbar-nav navbar-right">
-					        <li><a href="" data-target-modal="auth" data-action="openModal">Войти</a></li>
+					        <li><a href="" data-target-modal="auth" data-trigger="openModal">Войти</a></li>
 					    </ul>
 					</div>
 				    
@@ -60,12 +59,12 @@
 		                    <input type="checkbox" value="remember-me"> Запомнить меня
 		                </label>
 		            </div>
-		            <button class="btn btn-lg btn-success btn-block btn-signin" type="submit">Войти</button>
-		            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Регистрация</button>
+		            <button class="btn btn-lg btn-success btn-block btn-signin" data-action="login" type="submit">Войти</button>
+		            <button class="btn btn-lg btn-primary btn-block btn-signin" data-action="register" type="submit">Регистрация</button>
 		        </form><!-- /form -->
-		        <a href="#" class="forgot-password">
+		       <!--  <a href="#" class="forgot-password">
 		            Забыли пароль?
-		        </a>
+		        </a> -->
 		    </div>
 		</div>
 
@@ -110,9 +109,9 @@
 		<script src="js/custom/app.pages.dashboard.js"></script>
 
 		<script>
-
 			app.start();
-		
 		</script>
+
+
 	</body>
 </html>

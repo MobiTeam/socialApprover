@@ -30,6 +30,10 @@ body {
 	background: #507299;
 }
 
+.content-box {
+	padding-top: 50px;
+}
+
 
 .navbar-brand {
 	color: white!important;

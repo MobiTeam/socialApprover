@@ -4,7 +4,7 @@ var Page = function(parameters) {
 
 	'use strict';
 
-	if(!parameters) {
+	if (!parameters) {
 		throw new Error('Missing necessary arguments');
 	}
 
@@ -13,9 +13,6 @@ var Page = function(parameters) {
 	
 	self.open = function() {
 		
-		// $('.overlay').fadeIn(0);
-		// parameters.reloadData && parameters.reloadData();
-
 		if (parameters.template) {
 			$.get(parameters.template)
 				.done(function(response) {
@@ -28,16 +25,28 @@ var Page = function(parameters) {
 						}));
 					} 
 
-					$container.children().hide(0)
-					$container.find(parameters.basicSelector).fadeIn(40);
-					$('.overlay').fadeOut(25);
+					parameters.bindHandlers && parameters.bindHandlers($container);
+					self.open = _showContainer;
+					self.open();
+					
 				})
 				.fail(function() {
 					throw new Error('Error template loading');
 				});
+		} else {
+			parameters.bindHandlers && parameters.bindHandlers($container);
+			self.open = _showContainer;
+			self.open();
 		}
 
+	}
 
+	// util private functions
+
+	function _showContainer() {
+		$container.children().fadeOut(0)
+		$container.find(parameters.basicSelector).fadeIn(100);
+		$('.overlay').fadeOut(25);
 	}
 
 };

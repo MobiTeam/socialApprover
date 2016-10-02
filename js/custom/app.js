@@ -10,8 +10,10 @@ var app = (function($) {
 	var currentAnchor = {};
 	var modals = [];
 	var actionList = {
-		'page'  : _changePage,
-		'modal' : _openModal
+		'page'    : _changePage,
+		'modal'   : _openModal,
+		'login'   : _login,
+		'register': _register
 	}
 
 	// public interface
@@ -59,7 +61,8 @@ var app = (function($) {
 			.on('moduleload', _onModuleLoad);
 
 		$(document)	
-			.on('click', '[data-action="openModal"]', _onDataActionClick)
+			.on('click', '[data-trigger="openModal"]', _onDataTriggerClick)
+			.on('click', '[data-action]', _onDataActionClick)			
 			.on('closed', '.remodal', _onRemodalClose);
 		
 		window.onerror = _onError;	
@@ -73,6 +76,10 @@ var app = (function($) {
 		}
 
 		function _onDataActionClick(event) {
+			actionList[$(this).attr('data-action')] && actionList[$(this).attr('data-action')]($(this));
+		}
+
+		function _onDataTriggerClick(event) {
 			
 			var newAnchor = $.uriAnchor.makeAnchorMap(); 
 			newAnchor.modal = $(this).attr('data-target-modal');
@@ -197,6 +204,16 @@ var app = (function($) {
 		}
 
 		return true;
+	}
+
+	// not core functions
+
+	function _login($handledEl) {
+		alert('Авторизация');
+	}
+
+	function _register($handledEl) {
+		alert('Регистрация');
 	}
 
 })(jQuery);
