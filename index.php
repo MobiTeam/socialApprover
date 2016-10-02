@@ -10,6 +10,15 @@
 		<link rel="stylesheet" type="text/css" href="css/app.css">
 	</head>
 	<body>
+	
+		<div class="overlay">
+			<div class="preloader cssload-square">
+				<div class="cssload-square-part cssload-square-green"></div>
+				<div class="cssload-square-part cssload-square-pink"></div>
+				<div class="cssload-square-blend"></div>
+			</div>	
+		</div>
+
 		<div class="main-navbar navbar navbar-default navbar-static-top">
 			<div class="container main-navbar-wrap">
 				<div class="container-fluid">
@@ -24,8 +33,9 @@
 
 					<div class="navbar-ul collapse navbar-collapse">
 						<ul class="nav navbar-nav">
-		    				<li><a href="#">О нас</a></li>
-		    				<li><a href="#">FAQ</a></li>
+		    				<li><a href="#!page=aboutus">О нас</a></li>
+		    				<li><a href="#!page=index">FAQ</a></li>
+		    				<li><a href="#!page=dashboard">Dashboard</a></li>
 		    			</ul>
 
 					    <ul class="nav navbar-nav navbar-right">
@@ -37,23 +47,9 @@
 			</div>
 		</div>
 
-		<div class="container content-box">
-			
-			<a href="#!page=dashboard">dash</a>
-			<a href="#!page=index">index</a>
-			<a href="#!page=trouble">trouble</a>
+		<div class="container content-box"></div>
 
-		</div>
-
-		<div class="overlay">
-			<div class="preloader cssload-square">
-				<div class="cssload-square-part cssload-square-green"></div>
-				<div class="cssload-square-part cssload-square-pink"></div>
-				<div class="cssload-square-blend"></div>
-			</div>	
-		</div>
-
-		<div class="footer text-center">
+		<div class="footer text-center" style="display: none">
 			Social Approver - <?php echo date('Y') ?>
 		</div>
 		
@@ -81,6 +77,14 @@
 		<!-- pages -->
 		<script src="js/custom/app.pages.js"></script>
 		<script src="js/custom/app.pages.index.js"></script>
+		<script src="js/custom/app.pages.dashboard.js"></script>
+		<script src="js/custom/app.pages.feedback.js"></script>
+		<script src="js/custom/app.pages.new_project.js"></script>
+		<script src="js/custom/app.pages.profile.js"></script>
+		<script src="js/custom/app.pages.projects.js"></script>
+		<script src="js/custom/app.pages.results.js"></script>
+		<script src="js/custom/app.pages.settings.js"></script>
+		<script src="js/custom/app.pages.stats.js"></script>
 		<script src="js/custom/app.pages.dashboard.js"></script>
 
 		<script>

@@ -3,6 +3,11 @@
 	padding: 0;
 }
 
+html, body {
+	min-height: 100%;
+	height: 100%;
+}
+
 body {
 	background: #edeef0;
 }
@@ -52,6 +57,10 @@ body {
 
 .dashboard-item:active {
 	background: #ffffd6;
+}
+
+.item-link:link, .item-link:hover, .item-link:active {
+	text-decoration: none;
 }
 
 .item-content {
@@ -360,7 +369,7 @@ body {
 }
 
 .overlay {
-	display: none;
+	display: block;
 	position: fixed;
 	top: 0;
 	left: 0;

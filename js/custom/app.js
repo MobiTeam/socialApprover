@@ -20,8 +20,6 @@ var app = (function($) {
 	// public methods
 
 	function start() {
-
-		// set default anchor;
 		_bindHandlers();
 		_ini();
 	}
