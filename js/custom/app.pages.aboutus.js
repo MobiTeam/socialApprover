@@ -3,6 +3,5 @@ app.pages.aboutus = new Page({
 	'basicSelector' : '.aboutus-page',
 	'reloadData' 	: function() {
 
-	},
-
+	}
 })

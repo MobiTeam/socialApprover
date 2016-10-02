@@ -23,11 +23,10 @@
 			<div class="container main-navbar-wrap">
 				<div class="container-fluid">
 				   	<div class="navbar-header">
-				   	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-ul" aria-expanded="false">
-		        		<span class="sr-only">Toggle navigation</span>
-		        		<i class="material-icons">&#xE5D2;</i>
-		        		
-		      		</button>
+					   	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-ul" aria-expanded="false">
+			        		<span class="sr-only">Toggle navigation</span>
+			        		<i class="material-icons">&#xE5D2;</i>
+			        	</button>
 				    	<a class="navbar-brand" href="#">Social Approver</a>
 				    </div>
 
@@ -39,12 +38,35 @@
 		    			</ul>
 
 					    <ul class="nav navbar-nav navbar-right">
-					        <li><a href="#auth">Войти</a></li>
+					        <li><a href="" data-target-modal="auth" data-action="openModal">Войти</a></li>
 					    </ul>
 					</div>
 				    
 				</div>
 			</div>
+		</div>
+
+		<div class="remodal auth-wrapper" data-remodal-id="auth" data-remodal-options="hashTracking: false">
+			<button data-remodal-action="close" class="remodal-close"></button>
+			<div class="card card-container">
+		        <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+		        <p id="profile-name" class="profile-name-card"></p>
+		        <form class="form-signin">
+		            <span id="reauth-email" class="reauth-email"></span>
+		            <input type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>
+		            <input type="password" id="inputPassword" class="form-control" placeholder="Пароль" required>
+		            <div id="remember" class="checkbox">
+		                <label>
+		                    <input type="checkbox" value="remember-me"> Запомнить меня
+		                </label>
+		            </div>
+		            <button class="btn btn-lg btn-success btn-block btn-signin" type="submit">Войти</button>
+		            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Регистрация</button>
+		        </form><!-- /form -->
+		        <a href="#" class="forgot-password">
+		            Забыли пароль?
+		        </a>
+		    </div>
 		</div>
 
 		<div class="container content-box"></div>
@@ -77,7 +99,7 @@
 		<!-- pages -->
 		<script src="js/custom/app.pages.js"></script>
 		<script src="js/custom/app.pages.index.js"></script>
-		<script src="js/custom/app.pages.dashboard.js"></script>
+		<script src="js/custom/app.pages.aboutus.js"></script>
 		<script src="js/custom/app.pages.feedback.js"></script>
 		<script src="js/custom/app.pages.new_project.js"></script>
 		<script src="js/custom/app.pages.profile.js"></script>
@@ -88,7 +110,9 @@
 		<script src="js/custom/app.pages.dashboard.js"></script>
 
 		<script>
+
 			app.start();
+		
 		</script>
 	</body>
 </html>

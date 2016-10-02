@@ -4,10 +4,14 @@ var app = (function($) {
 
 	// app settings
 
+	var debugMode = true;
+
 	var loadedModulesCnt = 0;
 	var currentAnchor = {};
+	var modals = [];
 	var actionList = {
-		'page' : _changePage
+		'page'  : _changePage,
+		'modal' : _openModal
 	}
 
 	// public interface
@@ -26,18 +30,17 @@ var app = (function($) {
 
 	function goToPage(newAddress, query, replaceQueryFlag) {
 
-		var newAnchor = $.extend(currentAnchor, {
-													page  : newAddress,
-													query : query 
-												});
+		var newAnchor = $.uriAnchor.makeAnchorMap(); 
+		newAnchor.page = newAddress;
 
-		// $(window).trigger('hashchange');
+		$(window).trigger('hashchange', [newAnchor]);
 
 	}
 
 	// private methods
 
 	function _ini() {
+
 		$.get('settings/acl.json')
 			.done(function(response) {
 				for (var module in app.modules) {
@@ -54,10 +57,30 @@ var app = (function($) {
 		$(window)
 			.on('hashchange', _onHashChange)
 			.on('moduleload', _onModuleLoad);
+
+		$(document)	
+			.on('click', '[data-action="openModal"]', _onDataActionClick)
+			.on('closed', '.remodal', _onRemodalClose);
 		
 		window.onerror = _onError;	
 
 		// listeners
+
+		function _onRemodalClose(event) {
+			var anchor = $.uriAnchor.makeAnchorMap();
+			delete anchor.modal;
+			_updateAnchor(anchor);
+		}
+
+		function _onDataActionClick(event) {
+			
+			var newAnchor = $.uriAnchor.makeAnchorMap(); 
+			newAnchor.modal = $(this).attr('data-target-modal');
+		
+			$(window).trigger('hashchange', [newAnchor]);
+			event.preventDefault();
+
+		}
 
 		function _onModuleLoad(event) {
 
@@ -66,18 +89,18 @@ var app = (function($) {
 			if (loadedModulesCnt == Object.keys(app.modules).length) {
 				// go to page rendering
 				$(window).trigger('hashchange');
-				console.log('All modules loaded');
+				debugMode && console.info('All modules loaded');
 			}
 		}
 
-		function _onHashChange(event) {
-			
-			var newAnchor = $.uriAnchor.makeAnchorMap(),
+		function _onHashChange(event, data) {
+
+			var newAnchor = data || $.uriAnchor.makeAnchorMap(),
 				oldAnchor = currentAnchor;
 
 			newAnchor.page = newAnchor.page || 'index';	
 
-			if(_updateAnchor(newAnchor)) {
+			if (_updateAnchor(newAnchor)) {
 				var changes = _getChanges(newAnchor, oldAnchor);
 				_applyChanges(changes);	
 			}
@@ -100,7 +123,11 @@ var app = (function($) {
 			        'Error object: ' + JSON.stringify(error)
 			    ].join(' - ');
 
-			    alert(message);
+			    if (debugMode) {
+			    	alert(message);
+			    } else {
+			    	// TO-DO send on server
+			    }
 			}
 
 			// app reload previous state
@@ -112,7 +139,22 @@ var app = (function($) {
 	// actions
 
 	function _changePage(page) {
+		debugMode && console.info('Change page - ' + page);
 		app.pages[page] && app.pages[page].open();
+	}
+
+	function _openModal(idModal) {
+		if ($('[data-remodal-id="' + idModal + '"]').size() > 0) {
+			debugMode && console.info('Open modal ' + idModal);
+			
+			if (modals.indexOf(idModal) == -1) {
+				modals[idModal] = $('[data-remodal-id="' + idModal + '"]').remodal();
+			}
+
+			modals[idModal].open(); 
+		} else {
+			// to-do incorrect modal address
+		}
 	}
 	
 	// util functions 
