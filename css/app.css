@@ -12,6 +12,14 @@ body {
 	background: #edeef0;
 }
 
+.divider {
+	height: 2px!important;
+    margin: 9px 1px;
+    overflow: hidden;
+    background-color: #e5e5e5!important;
+    border-bottom: 1px solid #ffffff;
+}    
+
 .adapt-img {
 	max-width: 100%;
 	height: auto;

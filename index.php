@@ -8,6 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="css/remodal.css">
 		<link rel="stylesheet" type="text/css" href="css/remodal-default-theme.css">
 		<link rel="stylesheet" type="text/css" href="css/app.css">
+		<link rel="stylesheet" type="text/css" href="css/app.administrator.css">
 	</head>
 	<body>
 	
@@ -107,6 +108,7 @@
 		<script src="js/custom/app.pages.settings.js"></script>
 		<script src="js/custom/app.pages.stats.js"></script>
 		<script src="js/custom/app.pages.dashboard.js"></script>
+		<script src="js/custom/app.pages.administrator.js"></script>
 
 		<script>
 			app.start();
