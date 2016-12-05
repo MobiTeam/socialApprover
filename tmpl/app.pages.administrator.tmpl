@@ -1,30 +1,39 @@
 <div class="container">
 	<div class="row">
-		<div class="col-md-2 col-xs-12">
+		<div class="col-md-3 col-xs-12">
 			<ul class="nav nav-pills nav-stacked admin-menu">
 				<li class="active">
-					<a href="#profile_manager" data-target-id="establishment">
-						<i class="fa fa-home fa-fw"></i> 
-						Менеджер пользователей 
+					<a href="#!page=profile_manager">
+						<i class="material-icons menu-item-icon">&#xE7FD;</i>
+						Пользователи
+						<span class="badge menu-right-badge">5</span>
 					</a>
 				</li>
 				<li>
-					<a href="#feedback" data-target-id="administration">
-						<i class="fa fa-list-alt fa-fw"></i> 
-						Обратная связь 
+					<a href="#!page=projects">
+						<i class="material-icons menu-item-icon">&#xE02F;</i>
+						Проекты
+						<span class="badge menu-right-badge">13</span>
+					</a>
+				</li>
+				<li>
+					<a href="#!page=feedback">
+						<i class="material-icons menu-item-icon">&#xE87F;</i>
+						Обратная связь
+						<span class="badge menu-right-badge">3</span>
 					</a>
 				</li>
 				<li class="divider"></li>
 				<li>
 					<a href="#" data-target-id="finance">
-						<i class="fa fa-file-o fa-fw"></i> 
+						<i class="material-icons menu-item-icon">&#xE879;</i> 
 						Выход 
 					</a>
 				</li>
 			</ul>
 		</div>
 		<h2>Пользователи</h2>
-		<div class="col-md-10 col-xs-12 well main-content">
+		<div class="col-md-9 col-xs-12 well main-content">
 
 			<table class="table table-hover" id="table" >
 			    <thead>
@@ -45,7 +54,9 @@
 			            <td>29.04.2015 16:10:34</td>				            
 			            <td>Активен</td>
 			            <th>
-			            	<button class="btn btn-success">Редактировать</button>			            	
+			            	<button class="btn btn-success edit-button">
+			            		<i class="material-icons">&#xE254;</i>
+			            	</button>			            	
 			            </th>					            
 			        </tr>
 			        <tr>
@@ -55,87 +66,45 @@
 			            <td>29.04.2015 16:10:34</td>				            
 			            <td>Активен</td>
 			            <th>
-			            	<button class="btn btn-success">Редактировать</button>			            	
+			            	<button class="btn btn-success edit-button">
+			            		<i class="material-icons">&#xE254;</i>
+			            	</button>			            	
 			            </th>								           
 			        </tr>
 			        <tr>
-			            <td><a href="#">admin-test@mail.ru</a></td>				            
-			            <td>Администратор Администраторович</td>				            
-			            <td>Администратор</td>				            
-			            <td>29.04.2015 16:10:34</td>				            
-			            <td>Активен</td>
-			            <th>
-			            	<button class="btn btn-success">Редактировать</button>			            	
-			            </th>					            
-			        </tr>
-			        <tr>
-			            <td><a href="#">vladonxp@mail.ru</a></td>				           
-			            <td>Петроченко Владислав Юрьевич</td>
+			            <td><a href="#">test1@mail.ru</a></td>				           
+			            <td>Тестовый пользователь 1</td>
 			            <td>Менеджер</td>
-			            <td>29.04.2015 16:10:34</td>				            
+			            <td>28.04.2015 16:10:34</td>				            
 			            <td>Активен</td>
 			            <th>
-			            	<button class="btn btn-success">Редактировать</button>			            	
+			            	<button class="btn btn-success edit-button">
+			            		<i class="material-icons">&#xE254;</i>
+			            	</button>		            	
 			            </th>								           
-			        </tr>	
-			        <tr>
-			            <td><a href="#">admin-test@mail.ru</a></td>				            
-			            <td>Администратор Администраторович</td>				            
-			            <td>Администратор</td>				            
-			            <td>29.04.2015 16:10:34</td>				            
-			            <td>Активен</td>
-			            <th>
-			            	<button class="btn btn-success">Редактировать</button>			            	
-			            </th>					            
 			        </tr>
 			        <tr>
-			            <td><a href="#">vladonxp@mail.ru</a></td>				           
-			            <td>Петроченко Владислав Юрьевич</td>
+			            <td><a href="#">test2@mail.ru</a></td>				           
+			            <td>Тестовый пользователь 2</td>
 			            <td>Менеджер</td>
-			            <td>29.04.2015 16:10:34</td>				            
+			            <td>28.04.2015 16:10:34</td>				            
 			            <td>Активен</td>
 			            <th>
-			            	<button class="btn btn-success">Редактировать</button>			            	
+			            	<button class="btn btn-success edit-button">
+			            		<i class="material-icons">&#xE254;</i>
+			            	</button>		            	
 			            </th>								           
-			        </tr>	
-			        <tr>
-			            <td><a href="#">admin-test@mail.ru</a></td>				            
-			            <td>Администратор Администраторович</td>				            
-			            <td>Администратор</td>				            
-			            <td>29.04.2015 16:10:34</td>				            
-			            <td>Активен</td>
-			            <th>
-			            	<button class="btn btn-success">Редактировать</button>			            	
-			            </th>					            
 			        </tr>
 			        <tr>
-			            <td><a href="#">vladonxp@mail.ru</a></td>				           
-			            <td>Петроченко Владислав Юрьевич</td>
+			            <td><a href="#">test3@mail.ru</a></td>				           
+			            <td>Тестовый пользователь 3</td>
 			            <td>Менеджер</td>
-			            <td>29.04.2015 16:10:34</td>				            
+			            <td>28.04.2015 16:10:34</td>				            
 			            <td>Активен</td>
 			            <th>
-			            	<button class="btn btn-success">Редактировать</button>			            	
-			            </th>								           
-			        </tr>	
-			        <tr>
-			            <td><a href="#">admin-test@mail.ru</a></td>				            
-			            <td>Администратор Администраторович</td>				            
-			            <td>Администратор</td>				            
-			            <td>29.04.2015 16:10:34</td>				            
-			            <td>Активен</td>
-			            <th>
-			            	<button class="btn btn-success">Редактировать</button>			            	
-			            </th>					            
-			        </tr>
-			        <tr>
-			            <td><a href="#">vladonxp@mail.ru</a></td>				           
-			            <td>Петроченко Владислав Юрьевич</td>
-			            <td>Менеджер</td>
-			            <td>29.04.2015 16:10:34</td>				            
-			            <td>Активен</td>
-			            <th>
-			            	<button class="btn btn-success">Редактировать</button>			            	
+			            	<button class="btn btn-success edit-button">
+			            		<i class="material-icons">&#xE254;</i>
+			            	</button>		            	
 			            </th>								           
 			        </tr>				       
 			    </tbody>
